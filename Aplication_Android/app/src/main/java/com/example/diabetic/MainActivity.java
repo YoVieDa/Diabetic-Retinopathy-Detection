@@ -38,18 +38,20 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
 public class MainActivity extends AppCompatActivity {
-    private Button selectBtn, captureBtn, predictBtn, saveBtn;
+    private Button selectBtn, captureBtn, predictBtn;
     private TextView result;
     private ImageView imageView;
-    private EditText nameFileInpt;
     Bitmap bitmap;
 
-    String predict, percent;
-
-    OutputStream outputStream;
-
     @Override
+    // This function called once when the program created
     protected void onCreate(Bundle savedInstanceState) {
+        /*
+        REQUEST CODE
+        10 - Open Gallery View - Activity
+        11 - Camera permission - RequestPermission
+        12 - Open Camera View - Activity
+         */
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -59,11 +61,7 @@ public class MainActivity extends AppCompatActivity {
         predictBtn = findViewById(R.id.predictBtn);
         result = findViewById(R.id.result);
 
-        nameFileInpt = findViewById(R.id.nameFile);
-        nameFileInpt.setVisibility(View.GONE);
-        saveBtn = findViewById(R.id.saveBtn);
-        saveBtn.setVisibility(View.GONE);
-
+        // Set button to active gallery view click action, and it used for assign request code
         selectBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -74,7 +72,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        captureBtn.setOnClickListener( new View.OnClickListener() {
+        // Set button to active camera view click action, and it used for assign request code
+        captureBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -82,132 +81,101 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Set button prediction click action, doesn't set request code
         predictBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String text = new String();
                 String[] classes = {"DR", "No DR"};
+                int pred = 0;
+
+                // This is for try catch if there was an image or it wasn't
                 try {
-                    ModelFix model = ModelFix.newInstance(MainActivity.this);
+                    pred = bitmap.getByteCount();
+                }
+                catch (Exception e) {
+                    result.setText("Choose the image");
+                }
 
-                    // Creates inputs for reference
-                    TensorBuffer inputFeature0 = TensorBuffer.createFixedSize(new int[]{1, 224, 224, 3}, DataType.FLOAT32);
+                if (pred > 0) {
+                    // Detection process
+                    try {
+                        ModelFix model = ModelFix.newInstance(MainActivity.this);
 
-                    ByteBuffer byteBuffer = ByteBuffer.allocateDirect(4 * 224 * 224 * 3);
-                    byteBuffer.order(ByteOrder.nativeOrder());
+                        // Creates inputs for reference
+                        TensorBuffer inputFeature0 = TensorBuffer.createFixedSize(new int[]{1, 224, 224, 3}, DataType.FLOAT32);
 
-                    int [] intValues = new int [224 * 224];
-                    bitmap.getPixels(intValues, 0, bitmap.getWidth(), 0, 0, bitmap.getHeight(), bitmap.getHeight());
-                    int pixel = 0;
-                    for (int i = 0; i < 224; i++) {
-                        for (int j = 0; j < 224; j++) {
-                            int val = intValues[pixel++];
-                            byteBuffer.putFloat(((val >> 16) & 0xFF) * (1.f / 1));
-                            byteBuffer.putFloat(((val >> 8) & 0xFF) * (1.f / 1));
-                            byteBuffer.putFloat((val & 0xFF) * (1.f / 1));
+                        // Prepare for buffer image
+                        ByteBuffer byteBuffer = ByteBuffer.allocateDirect(4 * 224 * 224 * 3);
+                        byteBuffer.order(ByteOrder.nativeOrder());
+
+                        // Match the data pixel into the buffer
+                        int [] intValues = new int [224 * 224];
+                        bitmap.getPixels(intValues, 0, bitmap.getWidth(), 0, 0, bitmap.getHeight(), bitmap.getHeight());
+                        int pixel = 0;
+                        for (int i = 0; i < 224; i++) {
+                            for (int j = 0; j < 224; j++) {
+                                int val = intValues[pixel++];
+                                byteBuffer.putFloat(((val >> 16) & 0xFF) * (1.f / 1));
+                                byteBuffer.putFloat(((val >> 8) & 0xFF) * (1.f / 1));
+                                byteBuffer.putFloat((val & 0xFF) * (1.f / 1));
+                            }
                         }
-                    }
 
-                    //inputFeature0.loadBuffer(TensorImage.fromBitmap(bitmap).getBuffer());
-                    inputFeature0.loadBuffer(byteBuffer);
+                        inputFeature0.loadBuffer(byteBuffer);
 
-                    // Runs model inference and gets result.
-                    ModelFix.Outputs outputs = model.process(inputFeature0);
-                    TensorBuffer outputFeature0 = outputs.getOutputFeature0AsTensorBuffer();
+                        // Runs model inference and gets result.
+                        ModelFix.Outputs outputs = model.process(inputFeature0);
+                        TensorBuffer outputFeature0 = outputs.getOutputFeature0AsTensorBuffer();
 
-                    float [] confidences = outputFeature0.getFloatArray();
-                    int maxPos = 0;
-                    float maxConfidence = 0;
-                    for (int i = 0; i < confidences.length; i++) {
-                        if (confidences[i] > maxConfidence) {
-                            maxConfidence = confidences[i];
-                            maxPos = i;
+                        // Get prediction and confidence
+                        float [] confidences = outputFeature0.getFloatArray();
+                        int maxPos = 0;
+                        float maxConfidence = 0;
+                        for (int i = 0; i < confidences.length; i++) {
+                            if (confidences[i] > maxConfidence) {
+                                maxConfidence = confidences[i];
+                                maxPos = i;
+                            }
                         }
+
+                        // Set the output of prediction
+                        text = classes[maxPos].concat("\n").concat(String.valueOf(maxConfidence * 100)).concat("%");
+                        result.setText(text);
+
+                        // Releases model resources if no longer used.
+                        model.close();
+                    } catch (IOException e) {
+                        // TODO Handle the exception
                     }
-
-                    predict = classes[maxPos];
-                    percent = String.valueOf(maxConfidence * 100);
-
-                    text = predict.concat("\n").concat(percent).concat("%");
-
-                    result.setText(text);
-
-                    // Releases model resources if no longer used.
-                    model.close();
-                    nameFileInpt.setVisibility(View.VISIBLE);
-                    saveBtn.setVisibility(View.VISIBLE);
-                } catch (IOException e) {
-                    // TODO Handle the exception
                 }
             }
         });
 
-        saveBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                saveResult();
-            }
-        });
-
+        // Call function for get permission
         getPermission();
     }
 
     void getPermission() {
+        // Checking android version
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            // Checking camera permission if permission not given yet
             if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
                 captureBtn.setEnabled(false);
                 ActivityCompat.requestPermissions(MainActivity.this, new String[] {Manifest.permission.CAMERA}, 11);
             }
-            if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(MainActivity.this, new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE}, 13);
-            }
-        }
-    }
-
-    void saveResult() {
-        File dir = new File(Environment.getDataDirectory(), "Skripsi");
-
-        if (!dir.exists()) {
-            dir.mkdir();
-        }
-
-        String fileName = nameFileInpt.getText().toString();
-        fileName = fileName+"_"+predict+"_"+percent;
-
-        File file = new File(dir, fileName+".jpg");
-        try {
-            outputStream = new FileOutputStream(file);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream);
-        Toast.makeText(MainActivity.this, "Sukses disimpan", Toast.LENGTH_SHORT).show();
-
-        try {
-            outputStream.flush();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        try {
-            outputStream.close();
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 
     @Override
+    // Request permission function
     public void onRequestPermissionsResult(int requestCode, @Nullable String [] permission, @Nullable int [] grantResult) {
         super.onRequestPermissionsResult(requestCode, permission, grantResult);
+        // Request for camera permission (request code 11)
         if (requestCode == 11) {
             if (grantResult.length > 0 && grantResult[0] == PackageManager.PERMISSION_GRANTED) {
                 this.getPermission();
                 captureBtn.setEnabled(true);
-            }
-        }
-        if (requestCode == 13) {
-            if (grantResult.length > 0 && grantResult[0] == PackageManager.PERMISSION_GRANTED) {
-                this.getPermission();
             }
         }
     }
@@ -216,24 +184,25 @@ public class MainActivity extends AppCompatActivity {
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
+            // Trigger when button Choose Image clicked and requestcode change 10
             if (requestCode == 10 && data != null) {
                 Uri uri = data.getData();
                 try {
                     bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), uri);
-                    imageView.setImageBitmap(bitmap);
                     bitmap = Bitmap.createScaledBitmap(bitmap, 224, 224, false);
+                    imageView.setImageBitmap(bitmap);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
 
+            // Trigger when button Capture Image clicked and requestcode change 12
             if (requestCode == 12 && data != null) {
                 bitmap = (Bitmap) data.getExtras().get("data");
                 int dimension = Math.min(bitmap.getWidth(), bitmap.getHeight());
                 bitmap = ThumbnailUtils.extractThumbnail(bitmap, dimension, dimension);
-                imageView.setImageBitmap(bitmap);
-
                 bitmap = Bitmap.createScaledBitmap(bitmap, 224, 224, false);
+                imageView.setImageBitmap(bitmap);
             }
         }
     }
