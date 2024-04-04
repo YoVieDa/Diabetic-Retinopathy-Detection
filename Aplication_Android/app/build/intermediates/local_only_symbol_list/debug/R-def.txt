@@ -1,0 +1,25 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color ic_launcher_background
+color white
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+id captureBtn
+id imageView
+id nameFile
+id predictBtn
+id result
+id resultLabel
+id saveBtn
+id selectBtn
+id title
+layout activity_main
+mipmap ic_launcher
+mipmap ic_launcher_foreground
+mipmap ic_launcher_round
+string app_name
+style Base.Theme.Diabetic
+style Theme.Diabetic
+xml backup_rules
+xml data_extraction_rules
