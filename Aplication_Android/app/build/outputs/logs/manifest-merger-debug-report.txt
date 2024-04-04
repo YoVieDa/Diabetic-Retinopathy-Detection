@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Dani\Kuliah\TA\GitHub\Aplication_Android\app\src\main\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\Dani\Kuliah\TA\GitHub\Aplication_Android\app\src\main\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\Dani\Kuliah\TA\GitHub\Aplication_Android\app\src\main\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\Dani\Kuliah\TA\GitHub\Aplication_Android\app\src\main\AndroidManifest.xml:2:1-32:12
+ADDED from C:\Dani\Kuliah\TA\Git\Aplication_Android\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from C:\Dani\Kuliah\TA\Git\Aplication_Android\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from C:\Dani\Kuliah\TA\Git\Aplication_Android\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from C:\Dani\Kuliah\TA\Git\Aplication_Android\app\src\main\AndroidManifest.xml:2:1-31:12
 MERGED from [com.google.android.material:material:1.9.0] C:\Users\Cintya Aprilia Dewi\.gradle\caches\transforms-3\7e7258815cd840f091c81036491fe249\transformed\material-1.9.0\AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Cintya Aprilia Dewi\.gradle\caches\transforms-3\08f55b195dcd0c7c189d9e8288f31b0a\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\Cintya Aprilia Dewi\.gradle\caches\transforms-3\02a5982ad45dce0d66b2b492d6deb158\transformed\appcompat-resources-1.6.1\AndroidManifest.xml:17:1-22:12
@@ -47,32 +47,28 @@ MERGED from [androidx.print:print:1.0.0] C:\Users\Cintya Aprilia Dewi\.gradle\ca
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\Cintya Aprilia Dewi\.gradle\caches\transforms-3\8926c8614022bac951cf6bb966ea69fc\transformed\annotation-experimental-1.3.0\AndroidManifest.xml:17:1-22:12
 MERGED from [org.tensorflow:tensorflow-lite:2.4.0] C:\Users\Cintya Aprilia Dewi\.gradle\caches\transforms-3\43db836151d7ca602661ba046969ca48\transformed\tensorflow-lite-2.4.0\AndroidManifest.xml:2:1-12:12
 	package
-		INJECTED from C:\Dani\Kuliah\TA\GitHub\Aplication_Android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Dani\Kuliah\TA\Git\Aplication_Android\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Dani\Kuliah\TA\GitHub\Aplication_Android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Dani\Kuliah\TA\Git\Aplication_Android\app\src\main\AndroidManifest.xml
 	xmlns:tools
-		ADDED from C:\Dani\Kuliah\TA\GitHub\Aplication_Android\app\src\main\AndroidManifest.xml:3:5-51
+		ADDED from C:\Dani\Kuliah\TA\Git\Aplication_Android\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
-		INJECTED from C:\Dani\Kuliah\TA\GitHub\Aplication_Android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Dani\Kuliah\TA\Git\Aplication_Android\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Dani\Kuliah\TA\GitHub\Aplication_Android\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from C:\Dani\Kuliah\TA\Git\Aplication_Android\app\src\main\AndroidManifest.xml:2:11-69
 uses-feature#android.hardware.camera
-ADDED from C:\Dani\Kuliah\TA\GitHub\Aplication_Android\app\src\main\AndroidManifest.xml:5:5-7:36
+ADDED from C:\Dani\Kuliah\TA\Git\Aplication_Android\app\src\main\AndroidManifest.xml:5:5-7:36
 	android:required
-		ADDED from C:\Dani\Kuliah\TA\GitHub\Aplication_Android\app\src\main\AndroidManifest.xml:7:9-33
+		ADDED from C:\Dani\Kuliah\TA\Git\Aplication_Android\app\src\main\AndroidManifest.xml:7:9-33
 	android:name
-		ADDED from C:\Dani\Kuliah\TA\GitHub\Aplication_Android\app\src\main\AndroidManifest.xml:6:9-47
+		ADDED from C:\Dani\Kuliah\TA\Git\Aplication_Android\app\src\main\AndroidManifest.xml:6:9-47
 uses-permission#android.permission.CAMERA
-ADDED from C:\Dani\Kuliah\TA\GitHub\Aplication_Android\app\src\main\AndroidManifest.xml:8:5-65
+ADDED from C:\Dani\Kuliah\TA\Git\Aplication_Android\app\src\main\AndroidManifest.xml:8:5-65
 	android:name
-		ADDED from C:\Dani\Kuliah\TA\GitHub\Aplication_Android\app\src\main\AndroidManifest.xml:8:22-62
-uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from C:\Dani\Kuliah\TA\GitHub\Aplication_Android\app\src\main\AndroidManifest.xml:9:5-81
-	android:name
-		ADDED from C:\Dani\Kuliah\TA\GitHub\Aplication_Android\app\src\main\AndroidManifest.xml:9:22-78
+		ADDED from C:\Dani\Kuliah\TA\Git\Aplication_Android\app\src\main\AndroidManifest.xml:8:22-62
 application
-ADDED from C:\Dani\Kuliah\TA\GitHub\Aplication_Android\app\src\main\AndroidManifest.xml:11:5-30:19
-INJECTED from C:\Dani\Kuliah\TA\GitHub\Aplication_Android\app\src\main\AndroidManifest.xml:11:5-30:19
+ADDED from C:\Dani\Kuliah\TA\Git\Aplication_Android\app\src\main\AndroidManifest.xml:10:5-29:19
+INJECTED from C:\Dani\Kuliah\TA\Git\Aplication_Android\app\src\main\AndroidManifest.xml:10:5-29:19
 MERGED from [com.google.android.material:material:1.9.0] C:\Users\Cintya Aprilia Dewi\.gradle\caches\transforms-3\7e7258815cd840f091c81036491fe249\transformed\material-1.9.0\AndroidManifest.xml:24:5-20
 MERGED from [com.google.android.material:material:1.9.0] C:\Users\Cintya Aprilia Dewi\.gradle\caches\transforms-3\7e7258815cd840f091c81036491fe249\transformed\material-1.9.0\AndroidManifest.xml:24:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Cintya Aprilia Dewi\.gradle\caches\transforms-3\08f55b195dcd0c7c189d9e8288f31b0a\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -90,47 +86,47 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Ci
 MERGED from [org.tensorflow:tensorflow-lite:2.4.0] C:\Users\Cintya Aprilia Dewi\.gradle\caches\transforms-3\43db836151d7ca602661ba046969ca48\transformed\tensorflow-lite-2.4.0\AndroidManifest.xml:10:5-20
 MERGED from [org.tensorflow:tensorflow-lite:2.4.0] C:\Users\Cintya Aprilia Dewi\.gradle\caches\transforms-3\43db836151d7ca602661ba046969ca48\transformed\tensorflow-lite-2.4.0\AndroidManifest.xml:10:5-20
 	android:extractNativeLibs
-		INJECTED from C:\Dani\Kuliah\TA\GitHub\Aplication_Android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Dani\Kuliah\TA\Git\Aplication_Android\app\src\main\AndroidManifest.xml
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.9.0] C:\Users\Cintya Aprilia Dewi\.gradle\caches\transforms-3\25d17c91d5902985514078e82b64555a\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from C:\Dani\Kuliah\TA\GitHub\Aplication_Android\app\src\main\AndroidManifest.xml:18:9-35
+		ADDED from C:\Dani\Kuliah\TA\Git\Aplication_Android\app\src\main\AndroidManifest.xml:17:9-35
 	android:label
-		ADDED from C:\Dani\Kuliah\TA\GitHub\Aplication_Android\app\src\main\AndroidManifest.xml:16:9-43
+		ADDED from C:\Dani\Kuliah\TA\Git\Aplication_Android\app\src\main\AndroidManifest.xml:15:9-43
 	android:fullBackupContent
-		ADDED from C:\Dani\Kuliah\TA\GitHub\Aplication_Android\app\src\main\AndroidManifest.xml:14:9-54
+		ADDED from C:\Dani\Kuliah\TA\Git\Aplication_Android\app\src\main\AndroidManifest.xml:13:9-54
 	android:roundIcon
-		ADDED from C:\Dani\Kuliah\TA\GitHub\Aplication_Android\app\src\main\AndroidManifest.xml:17:9-54
+		ADDED from C:\Dani\Kuliah\TA\Git\Aplication_Android\app\src\main\AndroidManifest.xml:16:9-54
 	tools:targetApi
-		ADDED from C:\Dani\Kuliah\TA\GitHub\Aplication_Android\app\src\main\AndroidManifest.xml:20:9-29
+		ADDED from C:\Dani\Kuliah\TA\Git\Aplication_Android\app\src\main\AndroidManifest.xml:19:9-29
 	android:icon
-		ADDED from C:\Dani\Kuliah\TA\GitHub\Aplication_Android\app\src\main\AndroidManifest.xml:15:9-43
+		ADDED from C:\Dani\Kuliah\TA\Git\Aplication_Android\app\src\main\AndroidManifest.xml:14:9-43
 	android:allowBackup
-		ADDED from C:\Dani\Kuliah\TA\GitHub\Aplication_Android\app\src\main\AndroidManifest.xml:12:9-35
+		ADDED from C:\Dani\Kuliah\TA\Git\Aplication_Android\app\src\main\AndroidManifest.xml:11:9-35
 	android:theme
-		ADDED from C:\Dani\Kuliah\TA\GitHub\Aplication_Android\app\src\main\AndroidManifest.xml:19:9-46
+		ADDED from C:\Dani\Kuliah\TA\Git\Aplication_Android\app\src\main\AndroidManifest.xml:18:9-46
 	android:dataExtractionRules
-		ADDED from C:\Dani\Kuliah\TA\GitHub\Aplication_Android\app\src\main\AndroidManifest.xml:13:9-65
+		ADDED from C:\Dani\Kuliah\TA\Git\Aplication_Android\app\src\main\AndroidManifest.xml:12:9-65
 activity#com.example.diabetic.MainActivity
-ADDED from C:\Dani\Kuliah\TA\GitHub\Aplication_Android\app\src\main\AndroidManifest.xml:21:9-29:20
+ADDED from C:\Dani\Kuliah\TA\Git\Aplication_Android\app\src\main\AndroidManifest.xml:20:9-28:20
 	android:exported
-		ADDED from C:\Dani\Kuliah\TA\GitHub\Aplication_Android\app\src\main\AndroidManifest.xml:23:13-36
+		ADDED from C:\Dani\Kuliah\TA\Git\Aplication_Android\app\src\main\AndroidManifest.xml:22:13-36
 	android:name
-		ADDED from C:\Dani\Kuliah\TA\GitHub\Aplication_Android\app\src\main\AndroidManifest.xml:22:13-41
+		ADDED from C:\Dani\Kuliah\TA\Git\Aplication_Android\app\src\main\AndroidManifest.xml:21:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Dani\Kuliah\TA\GitHub\Aplication_Android\app\src\main\AndroidManifest.xml:24:13-28:29
+ADDED from C:\Dani\Kuliah\TA\Git\Aplication_Android\app\src\main\AndroidManifest.xml:23:13-27:29
 action#android.intent.action.MAIN
-ADDED from C:\Dani\Kuliah\TA\GitHub\Aplication_Android\app\src\main\AndroidManifest.xml:25:17-69
+ADDED from C:\Dani\Kuliah\TA\Git\Aplication_Android\app\src\main\AndroidManifest.xml:24:17-69
 	android:name
-		ADDED from C:\Dani\Kuliah\TA\GitHub\Aplication_Android\app\src\main\AndroidManifest.xml:25:25-66
+		ADDED from C:\Dani\Kuliah\TA\Git\Aplication_Android\app\src\main\AndroidManifest.xml:24:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Dani\Kuliah\TA\GitHub\Aplication_Android\app\src\main\AndroidManifest.xml:27:17-77
+ADDED from C:\Dani\Kuliah\TA\Git\Aplication_Android\app\src\main\AndroidManifest.xml:26:17-77
 	android:name
-		ADDED from C:\Dani\Kuliah\TA\GitHub\Aplication_Android\app\src\main\AndroidManifest.xml:27:27-74
+		ADDED from C:\Dani\Kuliah\TA\Git\Aplication_Android\app\src\main\AndroidManifest.xml:26:27-74
 uses-sdk
-INJECTED from C:\Dani\Kuliah\TA\GitHub\Aplication_Android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Dani\Kuliah\TA\GitHub\Aplication_Android\app\src\main\AndroidManifest.xml
-INJECTED from C:\Dani\Kuliah\TA\GitHub\Aplication_Android\app\src\main\AndroidManifest.xml
+INJECTED from C:\Dani\Kuliah\TA\Git\Aplication_Android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Dani\Kuliah\TA\Git\Aplication_Android\app\src\main\AndroidManifest.xml
+INJECTED from C:\Dani\Kuliah\TA\Git\Aplication_Android\app\src\main\AndroidManifest.xml
 MERGED from [com.google.android.material:material:1.9.0] C:\Users\Cintya Aprilia Dewi\.gradle\caches\transforms-3\7e7258815cd840f091c81036491fe249\transformed\material-1.9.0\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.material:material:1.9.0] C:\Users\Cintya Aprilia Dewi\.gradle\caches\transforms-3\7e7258815cd840f091c81036491fe249\transformed\material-1.9.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Cintya Aprilia Dewi\.gradle\caches\transforms-3\08f55b195dcd0c7c189d9e8288f31b0a\transformed\constraintlayout-2.1.4\AndroidManifest.xml:5:5-7:41
@@ -216,10 +212,10 @@ MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\Cintya 
 MERGED from [org.tensorflow:tensorflow-lite:2.4.0] C:\Users\Cintya Aprilia Dewi\.gradle\caches\transforms-3\43db836151d7ca602661ba046969ca48\transformed\tensorflow-lite-2.4.0\AndroidManifest.xml:7:5-8:41
 MERGED from [org.tensorflow:tensorflow-lite:2.4.0] C:\Users\Cintya Aprilia Dewi\.gradle\caches\transforms-3\43db836151d7ca602661ba046969ca48\transformed\tensorflow-lite-2.4.0\AndroidManifest.xml:7:5-8:41
 	android:targetSdkVersion
-		INJECTED from C:\Dani\Kuliah\TA\GitHub\Aplication_Android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Dani\Kuliah\TA\Git\Aplication_Android\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Dani\Kuliah\TA\GitHub\Aplication_Android\app\src\main\AndroidManifest.xml
-		MERGED from C:\Dani\Kuliah\TA\GitHub\Aplication_Android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Dani\Kuliah\TA\Git\Aplication_Android\app\src\main\AndroidManifest.xml
+		MERGED from C:\Dani\Kuliah\TA\Git\Aplication_Android\app\src\main\AndroidManifest.xml
 provider#androidx.startup.InitializationProvider
 ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\Cintya Aprilia Dewi\.gradle\caches\transforms-3\2359ec2300da750368c8a650184da00c\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
 MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Cintya Aprilia Dewi\.gradle\caches\transforms-3\d78e4e26e1aefc152d0ee4dc6a642534\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:26:9-34:20

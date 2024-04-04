@@ -7,11 +7,9 @@ drawable ic_launcher_background
 drawable ic_launcher_foreground
 id captureBtn
 id imageView
-id nameFile
 id predictBtn
 id result
 id resultLabel
-id saveBtn
 id selectBtn
 id title
 layout activity_main

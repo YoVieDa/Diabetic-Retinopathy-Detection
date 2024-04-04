@@ -4,6 +4,25 @@
             "outputFile": "com.example.diabetic.app-mergeDebugResources-2:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
+                    "source": "C:\\Dani\\Kuliah\\TA\\Git\\Aplication_Android\\app\\src\\main\\res\\values-night\\themes.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "100",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "315"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "166"
+                    }
+                },
+                {
                     "source": "C:\\Users\\Cintya Aprilia Dewi\\.gradle\\caches\\transforms-3\\b5364afbc06c95c72352e38d6ea75d02\\transformed\\appcompat-1.6.1\\res\\values-night-v8\\values-night-v8.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
@@ -35,25 +54,6 @@
                         "startOffsets": "803,878,989,1078,1179,1286,1393,1492,1599,1702,1790,1914,2016,2118,2234,2336,2450,2578,2694,2816,2952,3072,3206,3326,3438,3653,3770,3894,4024,4146,4284,4418,4534",
                         "endColumns": "74,110,88,100,106,106,98,106,102,87,123,101,101,115,101,113,127,115,121,135,119,133,119,111,125,116,123,129,121,137,133,115,119",
                         "endOffsets": "873,984,1073,1174,1281,1388,1487,1594,1697,1785,1909,2011,2113,2229,2331,2445,2573,2689,2811,2947,3067,3201,3321,3433,3559,3765,3889,4019,4141,4279,4413,4529,4649"
-                    }
-                },
-                {
-                    "source": "C:\\Dani\\Kuliah\\TA\\GitHub\\Aplication_Android\\app\\src\\main\\res\\values-night\\themes.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "100",
-                        "endLines": "5",
-                        "endColumns": "12",
-                        "endOffsets": "315"
-                    },
-                    "to": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "5",
-                        "endColumns": "12",
-                        "endOffsets": "166"
                     }
                 }
             ]
