@@ -17,7 +17,7 @@ public class GuideActivity extends AppCompatActivity {
         TextView youtubeLinkInd = findViewById(R.id.youtubeLinkIndonesia);
         TextView pageGuideToMain = findViewById(R.id.clickToMain);
 
-        String youtubeUrl = "https://youtu.be/basRkp_VOvQ"; // Ganti dengan URL video YouTube Anda
+        String youtubeUrl = "https://youtu.be/VZ54D4OVaho"; // Ganti dengan URL video YouTube Anda
         youtubeLinkEng.setText(youtubeUrl);
         youtubeLinkInd.setText(youtubeUrl);
 
